@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCollisionRaycaster
@@ -10,6 +8,10 @@ public class PlayerCollisionRaycaster
     Transform _upperFrontPoint;
     Transform _lowerFrontPoint;
     Transform _bottomPoint;
+
+    RaycastHit _hit;
+    bool _responderHit;
+    RaycastResponder _rayResponder;
 
     public PlayerCollisionRaycaster(LayerMask detectable, float rayDistance, Transform upperFrontPoint, Transform lowerFrontPoint, Transform bottomPoint)
     {
@@ -26,13 +28,15 @@ public class PlayerCollisionRaycaster
 
     bool RayDoesHit(Transform point)
     {
-        return Physics.Raycast(point.position, point.forward, _rayDistance, _detectable);
-    }
+        var hasHit = Physics.Raycast(point.position, point.forward, out _hit, _rayDistance, _detectable);
 
-    public RaycastHit GetHit(Transform point)
-    {
-        RaycastHit hit;
-        Physics.Raycast(point.position, point.forward, out hit, _rayDistance, _detectable);
-        return hit;
+        if (!hasHit) { return hasHit; }
+
+        if (_hit.collider.GetComponent<RaycastResponder>() != null && !_responderHit)
+        { _rayResponder = _hit.collider.GetComponent<RaycastResponder>(); _rayResponder.OnRaycastHit(); _responderHit = true; }
+        else if (_hit.collider.GetComponent<RaycastResponder>() != _rayResponder && _responderHit)
+        { _rayResponder.OffRaycastHit(); _responderHit = false; }
+
+        return hasHit;
     }
 }

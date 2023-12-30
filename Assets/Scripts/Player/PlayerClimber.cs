@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerClimber
@@ -29,7 +28,7 @@ public class PlayerClimber
 
         while (!bottomHit() && safeTop > 0)
         {
-            rb.AddForce(rb.transform.forward * (_speed * .5f), ForceMode.Force);
+            rb.AddForce(rb.transform.forward * (_speed * .33f), ForceMode.Force);
             safeTop -= Time.deltaTime;
             yield return null;
         }

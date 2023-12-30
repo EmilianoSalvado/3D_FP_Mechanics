@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,12 +7,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] FirstPersonCamera _firstPersonCamera;
     float _mouseX, _mouseY;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Update()
     {
         _mouseX = Input.GetAxis("Mouse X");
         _mouseY = Input.GetAxis("Mouse Y");
 
-        _firstPersonCamera.Rotate(_mouseX, _mouseY);
+        _firstPersonCamera.SetViewAxis(_mouseX, _mouseY);
 
         _xAxis = Input.GetAxis("Horizontal");
         _yAxis = Input.GetAxis("Vertical");
