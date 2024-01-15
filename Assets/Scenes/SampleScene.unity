@@ -4514,7 +4514,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8311
   _rayDistance: 0.5
-  _climbingSpeed: 9
+  _climbingSpeed: 0.1
 --- !u!114 &1448477028
 MonoBehaviour:
   m_ObjectHideFlags: 0
