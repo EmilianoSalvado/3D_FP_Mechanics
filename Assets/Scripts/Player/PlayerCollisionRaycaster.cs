@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlayerCollisionRaycaster
 {
-    LayerMask _detectable;
+    LayerMask _upperMask;
+    LayerMask _lowerMask;
+    LayerMask _bottomMask;
     float _rayDistance;
 
     Transform _upperFrontPoint;
@@ -13,22 +15,24 @@ public class PlayerCollisionRaycaster
     bool _responderHit;
     RaycastResponder _rayResponder;
 
-    public PlayerCollisionRaycaster(LayerMask detectable, float rayDistance, Transform upperFrontPoint, Transform lowerFrontPoint, Transform bottomPoint)
+    public PlayerCollisionRaycaster(LayerMask upperMask, LayerMask lowerMask, LayerMask bottomMask, float rayDistance, Transform upperFrontPoint, Transform lowerFrontPoint, Transform bottomPoint)
     {
-        _detectable = detectable;
+        _upperMask = upperMask;
+        _lowerMask = lowerMask;
+        _bottomMask = bottomMask;
         _rayDistance = rayDistance;
         _upperFrontPoint = upperFrontPoint;
         _lowerFrontPoint = lowerFrontPoint;
         _bottomPoint = bottomPoint;
     }
 
-    public bool UpperHit() { return RayDoesHit(_upperFrontPoint); }
-    public bool LowerHit() { return RayDoesHit(_lowerFrontPoint); }
-    public bool BottomHit() { return RayDoesHit(_bottomPoint); }
+    public bool UpperHit() { return RayDoesHit(_upperFrontPoint, _upperMask); }
+    public bool LowerHit() { return RayDoesHit(_lowerFrontPoint, _lowerMask); }
+    public bool BottomHit() { return RayDoesHit(_bottomPoint, _bottomMask); }
 
-    bool RayDoesHit(Transform point)
+    bool RayDoesHit(Transform point, LayerMask mask)
     {
-        var hasHit = Physics.Raycast(point.position, point.forward, out _hit, _rayDistance, _detectable);
+        var hasHit = Physics.Raycast(point.position, point.forward, out _hit, _rayDistance, mask);
 
         if (!hasHit) { return hasHit; }
 

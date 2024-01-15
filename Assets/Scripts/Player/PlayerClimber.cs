@@ -4,33 +4,55 @@ using UnityEngine;
 
 public class PlayerClimber
 {
+    Rigidbody _rb;
     float _speed;
+    PlayerModel _playerModel;
 
-    public PlayerClimber(float climbingSpeed)
+    public PlayerClimber(float climbingSpeed, Rigidbody rb, PlayerModel playerModel)
     {
         _speed = climbingSpeed;
+        _rb = rb;
+        _playerModel = playerModel;
     }
 
-    public IEnumerator ClimbOver(Rigidbody rb, Func<bool> lowerFrontHit, Func<bool> bottomHit)
+    public void ClimbOver()
     {
-        rb.velocity = Vector3.zero;
-        rb.useGravity = false;
+        AuxMethods.Instance.AuxStartCoroutine(ClimbOverRoutine);
+    }
 
-        while (lowerFrontHit())
+    IEnumerator ClimbOverRoutine()
+    {
+        _rb.useGravity = false;
+        var t = new WaitForSeconds(Time.deltaTime);
+        while (_playerModel.LowerHit)
         {
-            rb.AddForce(Vector3.up * _speed, ForceMode.Force);
-            yield return null;
+            _rb.transform.position += _rb.transform.up * _speed;
+            yield return t;
         }
 
-        rb.velocity = Vector3.zero;
-        rb.useGravity = true;
-        float safeTop = .2f;
+        float safeTop = .3f;
 
-        while (!bottomHit() && safeTop > 0)
+        while (!_playerModel.BottomHit && safeTop > 0)
         {
-            rb.AddForce(rb.transform.forward * (_speed * .33f), ForceMode.Force);
+            _rb.transform.position += _rb.transform.forward * (_speed * .33f);
             safeTop -= Time.deltaTime;
-            yield return null;
+            yield return t;
         }
+        _rb.useGravity = true;
+    }
+
+    public void GrabGrip()
+    {
+        Debug.Log("grabbed");
+        _rb.velocity = Vector3.zero;
+        _rb.useGravity = false;
+        _playerModel.Movement.LockMovement(Directions.ForthBack);
+        _playerModel.Jump.CheckGrip();
+    }
+
+    public void ReleaseGrip()
+    {
+        _rb.useGravity = true;
+        _playerModel.Movement.UnlockMovement();
     }
 }

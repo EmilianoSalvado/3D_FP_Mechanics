@@ -1,24 +1,29 @@
+using System;
 using UnityEngine;
 public class PlayerMovement
 {
     Transform _transform;
     Rigidbody _rb;
     Vector3 _dir;
-    float _speed, _jumpForce;
+    float _speed;
+    Action<float, float> _setDir;
 
-    public PlayerMovement(Transform transform, Rigidbody rb, float speed, float jumpForce)
+    public PlayerMovement(Transform transform, Rigidbody rb, float speed)
     {
         _transform = transform;
         _rb = rb;
         _speed = speed;
-        _jumpForce = jumpForce;
+        _setDir = (x, y) =>
+        {
+            _dir = _transform.right * x + _transform.forward * y;
+            if (_dir.sqrMagnitude > 1f) _dir.Normalize();
+            _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
+        };
     }
 
     public void SetDirection(float x, float y)
     {
-        _dir = _transform.right * x + _transform.forward * y;
-        if (_dir.sqrMagnitude > 1f) _dir.Normalize();
-        _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
+        _setDir(x,y);
     }
 
     public void Move()
@@ -26,9 +31,35 @@ public class PlayerMovement
         _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
     }
 
-    public void Jump()
+    public void LockMovement(Directions dirToBlock)
     {
-        _rb.AddForce((Vector3.up + _dir * .5f) * _jumpForce, ForceMode.Impulse);
+        switch (dirToBlock)
+        {
+            case Directions.RightLeft:
+                _setDir = (x, y) =>
+                {
+                    _dir = _transform.right * 0f + _transform.forward * y;
+                    _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
+                };
+                break;
+            case Directions.ForthBack:
+                _setDir = (x, y) =>
+                {
+                    _dir = _transform.right * x + _transform.forward * 0f;
+                    _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
+                };
+                break;
+        }
+    }
+
+    public void UnlockMovement()
+    {
+        _setDir = (x, y) =>
+        {
+            _dir = _transform.right * x + _transform.forward * y;
+            if (_dir.sqrMagnitude > 1f) _dir.Normalize();
+            _rb.MovePosition(_transform.position + _dir * (_speed * Time.deltaTime));
+        };
     }
 
     public void ChangeSpeed(float speed)

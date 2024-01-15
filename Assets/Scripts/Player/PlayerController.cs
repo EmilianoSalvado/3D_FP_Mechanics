@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         _playerModel.SetMovementInputs(_xAxis, _yAxis);
 
         if (Input.GetKeyDown(KeyCode.Space))
-            _playerModel.Jump();
+            _playerModel.TryJump();
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift))
             _playerModel.Sprint(Input.GetKey(KeyCode.LeftShift));

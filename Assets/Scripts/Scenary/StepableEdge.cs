@@ -4,11 +4,13 @@ using UnityEngine;
 public class StepableEdge : MonoBehaviour, RaycastResponder
 {
     [SerializeField] Rigidbody _playerRB;
+    [SerializeField] PlayerModel _playerModel;
     [SerializeField] FirstPersonCamera _firstPersonCamera;
 
     private void OnCollisionEnter(Collision collision)
     {
         _playerRB = collision.transform.GetComponent<Rigidbody>();
+        _playerModel = collision.transform.GetComponent<PlayerModel>();
         _firstPersonCamera = collision.transform.GetComponentInChildren<FirstPersonCamera>();
     }
 
@@ -29,13 +31,14 @@ public class StepableEdge : MonoBehaviour, RaycastResponder
             alpha += Time.deltaTime;
             yield return null;
         }
-
+        _playerModel.Movement.LockMovement(Directions.ForthBack);
         _firstPersonCamera.Align(false);
         _firstPersonCamera.AlignWithPlayer();
     }
 
     public void Release()
     {
+        _playerModel.Movement.UnlockMovement();
         _firstPersonCamera.Align(true);
     }
 
