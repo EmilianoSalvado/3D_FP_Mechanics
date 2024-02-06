@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     float _xAxis, _yAxis;
     [SerializeField] FirstPersonCamera _firstPersonCamera;
     float _mouseX, _mouseY;
+    [SerializeField] WeaponAnimationsController _weaponAnimationsController;
+    [SerializeField] WeaponsManager _weaponManager;
 
     private void Start()
     {
@@ -27,7 +29,25 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             _playerModel.TryJump();
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _weaponManager.ShowWeapon(Weapons.Shield, !_weaponManager.ShieldActive);
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.LeftShift))
             _playerModel.Sprint(Input.GetKey(KeyCode.LeftShift));
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+            _weaponAnimationsController.Attack();
+
+        if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            bool b = Input.GetKey(KeyCode.Mouse1);
+            _weaponAnimationsController.Defense(b);
+            if (b && _weaponManager.ShieldActive)
+                _weaponAnimationsController.ChangeAttack(Weapons.Shield);
+            else
+                _weaponAnimationsController.ChangeAttack(Weapons.Sword);
+        }
     }
 }

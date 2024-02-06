@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AN_Sword_Attack_B
+  m_Name: AN_Shield_Parry
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 7.683, y: 11.53, z: -165.335}
+        value: {x: 16.588, y: 83.21, z: -1.947}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -28,25 +28,25 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.16666667
-        value: {x: 6.9575315, y: 9.927187, z: -169.10173}
-        inSlope: {x: -8.705624, y: -19.233753, z: -45.200684}
-        outSlope: {x: -8.705624, y: -19.233753, z: -45.200684}
+        value: {x: 12.157839, y: 68.1211, z: -1.7745601}
+        inSlope: {x: -53.161926, y: -181.06677, z: 2.0692792}
+        outSlope: {x: -53.161926, y: -181.06677, z: 2.0692792}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 3.04, y: 1.272, z: -189.442}
-        inSlope: {x: -22.689482, y: -13.844573, z: -53.10561}
-        outSlope: {x: -22.689482, y: -13.844573, z: -53.10561}
+        value: {x: -3.922, y: 13.354, z: 0.448}
+        inSlope: {x: 0, y: 0, z: 21.33658}
+        outSlope: {x: 0, y: 0, z: 21.33658}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.75
-        value: {x: -6.278, y: -0.747, z: -200.08}
+        time: 0.5833333
+        value: {x: -3.83, y: 22.343, z: 8.068}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -56,14 +56,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sword_Long_A
+    path: Low poly shield
   m_PositionCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.502, y: -0.345, z: 0.392}
+        value: {x: 0.512, y: -0.729, z: 0.905}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -72,25 +72,34 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.16666667
-        value: {x: 0.4545, y: -0.345, z: 0.4791875}
-        inSlope: {x: -0.5699998, y: 0, z: 1.04625}
-        outSlope: {x: -0.5699998, y: 0, z: 1.04625}
+        value: {x: 0.032, y: -0.735228, z: 0.917}
+        inSlope: {x: -3.7800002, y: 0, z: 0.19200039}
+        outSlope: {x: -3.7800002, y: 0, z: 0.19200039}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.25
+        value: {x: -0.433, y: -0.636, z: 1.15}
+        inSlope: {x: -8.573999, y: 0, z: 0}
+        outSlope: {x: -8.573999, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 0.198, y: -0.345, z: 0.95}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        value: {x: -1.397, y: -0.795, z: 0.98}
+        inSlope: {x: 0, y: -0.9480002, z: 0}
+        outSlope: {x: 0, y: -0.9480002, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.75
-        value: {x: 0.198, y: -0.453, z: 0.935}
+        time: 0.5833333
+        value: {x: -1.211, y: -0.952, z: 0.98}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -100,7 +109,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Sword_Long_A
+    path: Low poly shield
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -112,7 +121,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1372442065
+      path: 3930649687
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -121,7 +130,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1372442065
+      path: 3930649687
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -135,7 +144,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.75
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -157,7 +166,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.502
+        value: 0.512
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -166,16 +175,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 0.4545
-        inSlope: -0.5699998
-        outSlope: -0.5699998
+        value: 0.032
+        inSlope: -3.7800002
+        outSlope: -3.7800002
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.25
+        value: -0.433
+        inSlope: -8.573999
+        outSlope: -8.573999
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.198
+        value: -1.397
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -183,8 +201,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: 0.198
+        time: 0.5833333
+        value: -1.211
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -195,7 +213,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -205,7 +223,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.345
+        value: -0.729
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -214,7 +232,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: -0.345
+        value: -0.735228
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.25
+        value: -0.636
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -223,16 +250,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: -0.345
-        inSlope: 0
-        outSlope: 0
+        value: -0.795
+        inSlope: -0.9480002
+        outSlope: -0.9480002
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: -0.453
+        time: 0.5833333
+        value: -0.952
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -243,7 +270,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -253,7 +280,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.392
+        value: 0.905
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -262,16 +289,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 0.4791875
-        inSlope: 1.04625
-        outSlope: 1.04625
+        value: 0.917
+        inSlope: 0.19200039
+        outSlope: 0.19200039
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.33333334
-        value: 0.95
+        time: 0.25
+        value: 1.15
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -279,8 +306,17 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: 0.935
+        time: 0.33333334
+        value: 0.98
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5833333
+        value: 0.98
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -291,7 +327,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -301,7 +337,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 7.683
+        value: 16.588
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -310,25 +346,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 6.9575315
-        inSlope: -8.705624
-        outSlope: -8.705624
+        value: 12.157839
+        inSlope: -53.161926
+        outSlope: -53.161926
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 3.04
-        inSlope: -22.689482
-        outSlope: -22.689482
+        value: -3.922
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: -6.278
+        time: 0.5833333
+        value: -3.83
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -339,7 +375,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -349,7 +385,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 11.53
+        value: 83.21
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -358,25 +394,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 9.927187
-        inSlope: -19.233753
-        outSlope: -19.233753
+        value: 68.1211
+        inSlope: -181.06677
+        outSlope: -181.06677
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 1.272
-        inSlope: -13.844573
-        outSlope: -13.844573
+        value: 13.354
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: -0.747
+        time: 0.5833333
+        value: 22.343
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -387,7 +423,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -397,7 +433,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -165.335
+        value: -1.947
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -406,25 +442,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: -169.10173
-        inSlope: -45.200684
-        outSlope: -45.200684
+        value: -1.7745601
+        inSlope: 2.0692792
+        outSlope: 2.0692792
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: -189.442
-        inSlope: -53.10561
-        outSlope: -53.10561
+        value: 0.448
+        inSlope: 21.33658
+        outSlope: 21.33658
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.75
-        value: -200.08
+        time: 0.5833333
+        value: 8.068
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -435,7 +471,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 16
@@ -448,7 +484,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -460,7 +496,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -472,7 +508,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Sword_Long_A
+    path: Low poly shield
     classID: 4
     script: {fileID: 0}
     flags: 0
