@@ -32,6 +32,9 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] float _climbingSpeed;
     public PlayerClimber Climber { get; private set; }
 
+    [SerializeField] WeaponsManager _weaponsManager;
+    public WeaponsManager WeaponsManager { get { return _weaponsManager; } }
+
     private void Start()
     {
         Movement = new PlayerMovement(transform, _rb, _movementSpeed);
