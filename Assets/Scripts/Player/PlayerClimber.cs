@@ -43,7 +43,6 @@ public class PlayerClimber
 
     public void GrabGrip()
     {
-        Debug.Log("grabbed");
         _rb.velocity = Vector3.zero;
         _rb.useGravity = false;
         _playerModel.Movement.LockMovement(Directions.ForthBack);
