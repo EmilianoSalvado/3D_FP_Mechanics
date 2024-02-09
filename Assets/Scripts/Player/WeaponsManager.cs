@@ -7,12 +7,14 @@ public class WeaponsManager : MonoBehaviour
     [SerializeField] GameObject _sword;
     [SerializeField] GameObject _shield;
     [SerializeField] WeaponAnimationsController _weaponAnimationsController;
+
     bool _shieldActive = false;
     public bool ShieldActive { get { return _shieldActive; } }
     bool _hasSword = false;
     public bool HasSword {  get { return _hasSword; } }
     bool _hasShield = false;
     public bool HasShield { get { return _hasShield; } }
+
     public void ShowWeapon(Weapons weapon, bool show)
     {
         switch (weapon)
@@ -48,5 +50,7 @@ public class WeaponsManager : MonoBehaviour
                 _hasShield = true;
                 break;
         }
+
+        PlayerController.Instance.EnableCombatControls(true);
     }
 }

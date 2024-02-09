@@ -25,6 +25,8 @@ public class StepableEdge : MonoBehaviour, RaycastResponder
         var b = transform.forward;
         var alpha = 0f;
 
+        PlayerController.Instance.EnableCameraControls(false);
+
         while (alpha < 1f)
         {
             _playerRB.transform.forward = Vector3.Lerp(a, b, alpha);
@@ -34,6 +36,8 @@ public class StepableEdge : MonoBehaviour, RaycastResponder
         _playerModel.Movement.LockMovement(Directions.ForthBack);
         _firstPersonCamera.Align(false);
         _firstPersonCamera.AlignWithPlayer();
+
+        PlayerController.Instance.EnableCameraControls(true);
     }
 
     public void Release()
